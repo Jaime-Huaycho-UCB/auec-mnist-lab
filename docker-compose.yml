@@ -9,7 +9,8 @@ services:
     volumes:
       - ./output:/workspace/output        # figuras, modelos, métricas  ← aparecen aquí
       - ./data:/workspace/data            # raw + processed (persistidos)
-      - ./notebooks:/workspace/notebooks  # notebooks con outputs guardados
+      - ./notebooks:/workspace/notebooks
+      - ./scripts:/workspace/scripts
       - ./src:/workspace/src
       - ./config:/workspace/config
       - ./run_lab.sh:/workspace/run_lab.sh
