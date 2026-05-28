@@ -6,6 +6,7 @@ output/models/
 # ── Dataset (se descarga automáticamente) ────────────────────
 data/raw/
 data/processed/
+data/metadata.json
 
 # ── Entorno Python ────────────────────────────────────────────
 .venv/
