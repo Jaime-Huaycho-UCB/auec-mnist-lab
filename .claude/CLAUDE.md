@@ -57,12 +57,14 @@ Los resultados aparecen en `output/` de tu máquina local (volume mount).
 ```
 auec-mnist-lab/
 ├── config/params.yaml      ← ÚNICA fuente de verdad para hiperparámetros
-├── notebooks/              ← 5 fases CRISP-DM, ejecutar en orden
-│   ├── 01_business_understanding.ipynb   (objetivos, arquitectura del paper)
-│   ├── 02_data_understanding.ipynb       (EDA de MNIST)
-│   ├── 03_data_preparation.ipynb         (normalización, reshape, persistencia)
-│   ├── 04_modeling.ipynb                 (baselines B1/B2/B3 + AUEC)
-│   └── 05_evaluation.ipynb              (métricas, viz, análisis de error)
+├── scripts/                ← 5 fases CRISP-DM, ejecutar en orden con python
+│   ├── 01_business_understanding.py   (objetivos, arquitectura del paper)
+│   ├── 02_data_understanding.py       (EDA de MNIST)
+│   ├── 03_data_preparation.py         (normalización, reshape, persistencia)
+│   ├── 04_modeling.py                 (baselines B1/B2/B3 + AUEC)
+│   └── 05_evaluation.py              (métricas, viz, análisis de error)
+├── notebooks/
+│   └── demo.ipynb          ← solo para presentación/demo, carga outputs ya generados
 ├── src/
 │   ├── data_loader.py      ← descarga/carga MNIST, load_config()
 │   ├── preprocessing.py    ← normalize, reshape_cnn/flat, save/load_processed
