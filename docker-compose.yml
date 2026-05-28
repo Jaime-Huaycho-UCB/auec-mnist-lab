@@ -1,0 +1,21 @@
+services:
+  auec-lab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: auec-clustering-lab:latest
+    container_name: auec-lab
+
+    volumes:
+      - ./output:/workspace/output        # figuras, modelos, métricas  ← aparecen aquí
+      - ./data:/workspace/data            # raw + processed (persistidos)
+      - ./notebooks:/workspace/notebooks  # notebooks con outputs guardados
+      - ./src:/workspace/src
+      - ./config:/workspace/config
+      - ./run_lab.sh:/workspace/run_lab.sh
+
+    environment:
+      - PYTHONPATH=/workspace
+      - TF_CPP_MIN_LOG_LEVEL=2
+
+    command: bash /workspace/run_lab.sh

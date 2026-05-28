@@ -1,0 +1,28 @@
+# ── Resultados generados al correr el lab ────────────────────
+output/figures/
+output/results/
+output/models/
+
+# ── Dataset (se descarga automáticamente) ────────────────────
+data/raw/
+data/processed/
+
+# ── Entorno Python ────────────────────────────────────────────
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# ── Checkpoints de TensorFlow ─────────────────────────────────
+*.h5
+*.keras
+*.ckpt
+checkpoint
+
+# ── Legacy (notebook viejo archivado) ────────────────────────
+_legacy/
+
+# ── Sistema ───────────────────────────────────────────────────
+.DS_Store
+*.egg-info/

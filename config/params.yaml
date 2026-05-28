@@ -1,0 +1,52 @@
+# config/params.yaml
+# Parámetros globales del lab AUEC — Defensa Papers ML UCB 2026
+# Grupo JaimelA | Paper: Autoencoded UMAP-Enhanced Clustering (arXiv:2501.07729)
+
+# ── Reproducibilidad ─────────────────────────────────────────
+seed: 42
+
+# ── Dataset ──────────────────────────────────────────────────
+data:
+  raw_dir:       "data/raw"
+  processed_dir: "data/processed"
+  n_train:       15000   # subconjunto para CPU (~25 % del train original)
+  n_test:        3000    # subconjunto de test
+
+# ── Autoencoder Convolucional (CAE) ──────────────────────────
+ae:
+  latent_dim:    10      # dimensión del espacio latente Z
+  epochs:        30
+  batch_size:    128
+  learning_rate: 0.001
+  patience:      5       # EarlyStopping patience
+
+# ── UMAP ─────────────────────────────────────────────────────
+umap:
+  n_components:  10      # dimensiones de salida (para clustering)
+  n_neighbors:   15
+  min_dist:      0.1
+  # parámetros para visualización 2D (notebooks 02 y 05)
+  viz:
+    n_components: 2
+    n_neighbors:  15
+    min_dist:     0.1
+
+# ── K-means ──────────────────────────────────────────────────
+kmeans:
+  k:       10        # = nº de clases en MNIST
+  n_init:  15        # múltiples inicializaciones → resultado estable
+
+# ── DBSCAN ───────────────────────────────────────────────────
+dbscan:
+  eps:         0.5
+  min_samples: 10
+
+# ── PCA (baseline B2) ────────────────────────────────────────
+pca:
+  n_components: 50   # retiene ~85 % de varianza en MNIST
+
+# ── Salida ───────────────────────────────────────────────────
+output:
+  figures: "output/figures"
+  models:  "output/models"
+  results: "output/results"
